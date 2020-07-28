@@ -1,0 +1,47 @@
+{{define "base"}}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{template "title" .}} - Adarsh Kumar</title>
+        <link href="/static/css/hover.css" rel="stylesheet" media="all">
+        <link href="/static/css/main.css" rel="stylesheet" media="all">
+        <script src="https://kit.fontawesome.com/6cb4c88c47.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="/static/image/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <div>
+                <a href="/" class="header hvr-forward">Adarsh Kumar</a>
+            </div>
+            <div>
+                <a href="/" class="button hvr-sink">Home</a>
+                <a href="/about" class="button hvr-sink">About</a>
+                <a href="/projects" class="button hvr-sink">Projects</a>
+                <a href="/resume" class="button hvr-sink">Resume</a>
+                <a href="/contact" class="button hvr-sink">Contact</a>
+            </div>
+        </nav>
+        <section>
+            <div>
+                {{template "body" .}}
+            </div>
+        </section>
+        <footer>
+            <div>
+                <a href="https://www.github.com/iamadarshk" class="hvr-float"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/_iamadarshk" class="hvr-float"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+                <a href="https://instagram.com/_iamadarshk" class="hvr-float"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://linkedin.com/in/iamadarshk" class="hvr-float"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                <a href="https://dev.to/iamadarshk" class="hvr-float"><i class="fab fa-dev fa-2x" aria-hidden="true"></i></a>
+                <a href="https://twitch.tv/iamadarshk" class="hvr-float"><i class="fab fa-twitch fa-2x" aria-hidden="true"></i></a>
+                <a href="https://steamcommunity.com/id/iamadarshk" class="hvr-float"><i class="fab fa-steam fa-2x" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                &copy; 2020 Adarsh Kumar
+            </div>
+        </footer>
+    </body>
+</html>
+{{end}}

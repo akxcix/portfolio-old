@@ -1,0 +1,96 @@
+* {
+    font-family: "Ubuntu Mono", monospace;
+    color: #edf5e1;
+    border-radius: 5px;
+}
+
+html {
+    background-color: #5cdb95;
+}
+
+h1 {
+    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #05386b;
+}
+
+h1.text, h2.text {
+    padding-left: 500px;
+    padding-right: 500px;
+}
+
+div.center {
+    text-align: center;
+}
+
+a.button {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #05386b;
+    border-radius: 5px;
+}
+
+a.header {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #05386b;
+    padding: 10px;
+}
+
+header {
+    color: #BA68C8;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    padding-top: 17px;
+    padding-bottom: 15px;
+}
+
+nav a {
+    margin-right: 1.1em;
+    display: inline-block;
+}
+
+nav form {
+    display: inline-block;
+    margin-left: 1.1em;
+}
+
+nav div {
+    width: 50%;
+    float: left;
+}
+
+nav div:last-child {
+    text-align: right;
+}
+
+nav div:last-child a {
+    margin-left: 1.1em;
+    margin-right: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+footer div {
+    padding: 5px;
+    color: #05386b;
+}
+
+i.fab{
+    color: #05386b;
+}
