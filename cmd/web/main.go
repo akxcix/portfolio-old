@@ -6,6 +6,7 @@ Github: @iamadarshk
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 	"os"
@@ -17,6 +18,9 @@ type application struct {
 }
 
 func main() {
+	tls := flag.Bool("tls", false, "Specifies wether to use TLS or not.")
+	flag.Parse()
+
 	errorLog := log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.LUTC|log.Llongfile)
 	infoLog := log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.LUTC)
 
@@ -32,5 +36,9 @@ func main() {
 	}
 
 	infoLog.Println("Starting server")
-	errorLog.Fatal(srv.ListenAndServeTLS("./tls/cert.pem", "./tls/key.pem"))
+	if *tls {
+		errorLog.Fatal(srv.ListenAndServeTLS("./tls/cert.pem", "./tls/key.pem"))
+	} else {
+		errorLog.Fatal(srv.ListenAndServe())
+	}
 }
