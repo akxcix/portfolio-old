@@ -8,7 +8,7 @@ Using [docker](https://docker.com):
 docker build -t portfolio-server .
 
 # PORT is the enviorment variable containg number of the desired port
-docker run -p {$PORT}:8080 portfolio-server
+docker run -p ${PORT}:8080 portfolio-server
 ```
 
 ## License
