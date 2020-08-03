@@ -1,8 +1,6 @@
-/*
-This file contains the main function responsible for settip up the app, it's dependencies and starting the server.
-Author: Adarsh Kumar (iamadarshk.com)
-Github: @iamadarshk
-*/
+// This file contains the main function responsible for settip up the app, it's dependencies and starting the server.
+// Author: Adarsh Kumar (iamadarshk.com)
+// Github: @iamadarshk
 package main
 
 import (
