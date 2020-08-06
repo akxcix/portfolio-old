@@ -3,10 +3,12 @@
     --primary-color: #141829;
     --secondary-color: #21294c;
     --tertiary-color: #f2dea8;
-    --quaternary-color: #f9f2d7;
+    --quaternary-color: #79766e;
     --quinary-color: #000000;
     --senary-color: #777777;
 }
+
+/* Global ---------------------------------------------------------------------------------------*/
 
 * {
     box-sizing: border-box;
@@ -24,6 +26,22 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+}
+
+h1 {
+    padding-top: 1.5em;
+}
+
+h2 {
+    padding-top: 1.5em;
+}
+
+h3 {
+    padding-top: 1.5em;
+}
+
+p {
+    padding-top: 1.5em;
 }
 
 .navbar {
@@ -44,14 +62,16 @@ body {
     text-align: center;
 }
 
-footer .footer-icons {
-    font-size: 1.5em;
+.center {
+    text-align: center;
 }
 
-footer .footer-icons a {
-    padding-left: 0.25em;
-    padding-right: 0.25em;
+.justify {
+    text-align: justify;
 }
+
+
+/* Media Queries for respnsivness ---------------------------------------------------------------*/
 
 /* Phones */
 @media screen and (max-width: 600px) {
@@ -95,9 +115,6 @@ footer .footer-icons a {
     }
     footer {
         font-size: 13px;
-    }
-    footer .footer-icons {
-        font-size: 20px;
     }
 }
 
@@ -197,8 +214,8 @@ footer .footer-icons a {
 @media screen and (min-width: 992px) {
     .content {
         margin-top: 50px;
-        margin-left: 20vw;
-        margin-right: 20vw;
+        margin-left: 40vw;
+        margin-right: 40vw;
         margin-bottom: 50px;
     }
     .navbar{
@@ -234,15 +251,27 @@ footer .footer-icons a {
     .navbar-toggle {
         display: none;
     }
+    
+    footer {
+        font-size: 16px;
+    }
 
+    
 }
 
 /* Large Laptops and Desktops */
 @media screen and (min-width: 1200px) {
+    .wrapper-small{
+        padding-top: 1.5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
     .content {
         margin-top: 50px;
-        margin-left: 20vw;
-        margin-right: 20vw;
+        margin-left: 25vw;
+        margin-right: 25vw;
         margin-bottom: 50px;
     }
     .navbar{
@@ -277,6 +306,15 @@ footer .footer-icons a {
     .navbar-toggle {
         display: none;
     }
+}
+
+footer .footer-icons {
+    font-size: 1.5em;
+}
+
+footer .footer-icons a {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
 }
 
 
