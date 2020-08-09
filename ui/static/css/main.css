@@ -44,6 +44,14 @@ p {
     padding-top: 1.5em;
 }
 
+.about {
+    text-decoration: none;
+}
+
+i.about {
+    font-size: 2.5em;
+}
+
 .navbar {
     background-color: var(--secondary-color);
 }
@@ -70,11 +78,23 @@ p {
     text-align: justify;
 }
 
+.text-logo {
+    font-size: 2em;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 
 /* Media Queries for respnsivness ---------------------------------------------------------------*/
 
 /* Phones */
 @media screen and (max-width: 600px) {
+    .wrapper-small{
+        padding-top: 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
     .content {
         margin-top: 40px;
         margin-bottom: 40px;
@@ -262,11 +282,11 @@ p {
 /* Large Laptops and Desktops */
 @media screen and (min-width: 1200px) {
     .wrapper-small{
-        padding-top: 1.5em;
+        padding-top: 3em;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
-        grid-auto-rows: minmax(100px, auto);
+        grid-auto-rows: minmax(125px, auto);
     }
     .content {
         margin-top: 50px;
