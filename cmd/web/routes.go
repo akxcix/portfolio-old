@@ -15,10 +15,11 @@ func (app *application) Routes() http.Handler {
 	// Routes
 	r.HandleFunc("/", app.home).Methods("GET")
 	r.HandleFunc("/about", app.about).Methods("GET")
+	r.HandleFunc("/login", app.loginForm).Methods("GET")
 
 	// Static files
 	fileServer := http.FileServer(http.Dir("./ui/static/"))
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static", fileServer)).Methods("GET")
 
-	return r
+	return app.logRequest(r)
 }

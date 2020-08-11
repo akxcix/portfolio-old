@@ -65,3 +65,24 @@ func (app *application) about(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+// Admin stuff ----------------------------------------------------------------------------------
+// Method: GET, Path: "/login"
+func (app *application) loginForm(w http.ResponseWriter, r *http.Request) {
+	files := []string{
+		"./ui/html/login.page.tmpl",
+		"./ui/html/base.layout.tmpl",
+	}
+	ts, err := template.ParseFiles(files...)
+	if err != nil {
+		app.errorLog.Println(err.Error())
+		http.Error(w, "Internal Status Error", http.StatusInternalServerError)
+		return
+	}
+	err = ts.Execute(w, nil)
+	if err != nil {
+		app.errorLog.Println(err.Error())
+		http.Error(w, "Internal Status Error", http.StatusInternalServerError)
+		return
+	}
+}
