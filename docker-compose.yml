@@ -1,0 +1,14 @@
+version: '3'
+services: 
+    server:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        environment: 
+            - TLS=${TLS}
+            - ADDR=${ADDR}
+        ports:
+            - "${ADDR}:${ADDR}"
+        volumes:
+            - ${TLS_DIR}:/build/tls
+        network_mode: "host"

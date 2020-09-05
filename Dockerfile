@@ -1,11 +1,11 @@
 FROM golang:alpine
 
-ENV GO111MODULE=on \
-    CGO_ENABLED=0 \
-    GOOS=linux \
-    GOARCH=amd64
-
 WORKDIR /build
+
+ENV GO111MODULE on
+ENV CGO_ENABLED 0
+ENV GOOS linux
+ENV GOARCH amd64
 
 COPY go.mod .
 COPY go.sum .
@@ -14,4 +14,7 @@ COPY . .
 
 RUN go build -o main cmd/web/*
 
-ENTRYPOINT ["/build/main"]
+ENV ADDR 8080
+ENV TLS false
+
+CMD /build/main -tls=${TLS}
