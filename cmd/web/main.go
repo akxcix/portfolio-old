@@ -17,6 +17,7 @@ type application struct {
 
 func main() {
 	tls := flag.Bool("tls", false, "Specifies wether to use TLS or not.")
+	addr := flag.String("addr", ":443", "Address the server should listen at.")
 	flag.Parse()
 
 	errorLog := log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.LUTC|log.Llongfile)
@@ -30,10 +31,10 @@ func main() {
 	srv := &http.Server{
 		ErrorLog: errorLog,
 		Handler:  app.Routes(),
-		Addr:     ":8080",
+		Addr:     *addr,
 	}
 
-	infoLog.Println("Starting server")
+	infoLog.Printf("Starting server with TLS=%t, listening at %s", *tls, *addr)
 	if *tls {
 		errorLog.Fatal(srv.ListenAndServeTLS("./tls/cert.pem", "./tls/key.pem"))
 	} else {
