@@ -17,4 +17,4 @@ RUN go build -o main cmd/web/*
 ENV ADDR 8080
 ENV TLS false
 
-CMD /build/main -tls=${TLS}
+CMD /build/main -tls=${TLS} -addr=:"${ADDR}"
